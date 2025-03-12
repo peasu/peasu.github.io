@@ -19,12 +19,11 @@ cat.addEventListener('click', () => {
     origin: { y: 0.6 },
   });
 
-  alert('Meow! 🐾 You’re the best!');
 });
 
 // Countdown Timer
 function setCountdown() {
-  const countdownDate = new Date('2023-12-31T00:00:00').getTime(); // Set your target date here
+  const countdownDate = new Date('2025-04-07T00:00:00').getTime();
 
   const timer = setInterval(() => {
     const now = new Date().getTime();
@@ -49,25 +48,28 @@ function setCountdown() {
 
 // Flower Animation
 function playFlowerAnimation() {
-  const flowerAnimation = document.getElementById('flower-animation');
+  const container = document.getElementById('flower-animation-container');
 
-  // Load the Lottie animation
-  flowerAnimation.innerHTML = `
-    <lottie-player
-      src="https://assets10.lottiefiles.com/packages/lf20_8wRE4I.json"
-      background="transparent"
-      speed="1"
-      style="width: 200px; height: 200px;"
-      autoplay
-    ></lottie-player>
-  `;
+  // Play the animation 3 times at random positions
+  for (let i = 0; i < 3; i++) {
+    const flower = document.createElement('video');
+    flower.src = 'videos/floweranimation.webm'; // Path to your video file
+    flower.classList.add('flower-animation');
+    flower.autoplay = true;
+    flower.loop = false;
 
-  // Show the animation
-  flowerAnimation.style.opacity = '1';
+    // Set random position
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    flower.style.left = `${x}px`;
+    flower.style.top = `${y}px`;
 
-  // Hide the animation after it finishes
-  setTimeout(() => {
-    flowerAnimation.style.opacity = '0';
-    flowerAnimation.innerHTML = ''; // Clear the animation
-  }, 3000); // Adjust timing based on the animation length
+    // Append the video to the container
+    container.appendChild(flower);
+
+    // Remove the video after it finishes playing
+    flower.addEventListener('ended', () => {
+      flower.remove();
+    });
+  }
 }

@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <!-- Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <!-- Lottie Player -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
   <!-- Welcome Overlay -->
@@ -41,7 +39,6 @@
       <div class="cat"></div>
       <div class="heart"></div>
     </div>
-    <p>Enjoy these cute kitties!</p>
 
     <!-- Countdown Timer -->
     <div class="countdown-section">
@@ -57,11 +54,12 @@
     <!-- Interactive Bouquet -->
     <div class="bouquet-section">
       <div class="bouquet" onclick="playFlowerAnimation()">
-        <img src="images/bouquet.png" alt="Bouquet of Flowers" class="bouquet-image">
+        <img src="images/flowers.png" alt="Bouquet of Flowers" class="bouquet-image">
       </div>
-      <!-- Lottie Animation -->
-      <div id="flower-animation" class="flower-animation"></div>
     </div>
+
+    <!-- Flower Animation Container -->
+    <div id="flower-animation-container"></div>
   </div>
 
   <script src="script.js"></script>
