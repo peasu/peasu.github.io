@@ -59,7 +59,6 @@ p {
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
@@ -69,5 +68,6 @@ p {
   .cat {
     width: 100%;
     height: auto;
+    background-size: contain;
   }
 }
