@@ -1,4 +1,18 @@
+// Confetti on Page Load
+document.addEventListener('DOMContentLoaded', () => {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+  });
+});
+
+// Confetti on Cat Click
 const cat = document.querySelector('.cat');
 cat.addEventListener('click', () => {
-  alert('Meow! 🐾 You’re the best!');
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 },
+  });
 });
