@@ -1,4 +1,3 @@
-// Confetti on Page Load
 document.addEventListener('DOMContentLoaded', () => {
   confetti({
     particleCount: 100,
@@ -6,11 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     origin: { y: 0.6 },
   });
 
-  // Set countdown timer
   setCountdown();
 });
 
-// Confetti on Cat Click
 const cat = document.querySelector('.cat');
 cat.addEventListener('click', () => {
   confetti({
@@ -21,7 +18,6 @@ cat.addEventListener('click', () => {
 
 });
 
-// Countdown Timer
 function setCountdown() {
   const countdownDate = new Date('2025-04-07T00:00:00').getTime();
 
@@ -46,28 +42,23 @@ function setCountdown() {
   }, 1000);
 }
 
-// Flower Animation
 function playFlowerAnimation() {
   const container = document.getElementById('flower-animation-container');
 
-  // Play the animation 3 times at random positions
   for (let i = 0; i < 3; i++) {
     const flower = document.createElement('video');
-    flower.src = 'videos/floweranimation.webm'; // Path to your video file
+    flower.src = 'videos/floweranimation.webm';
     flower.classList.add('flower-animation');
     flower.autoplay = true;
     flower.loop = false;
 
-    // Set random position
     const x = Math.random() * window.innerWidth;
     const y = Math.random() * window.innerHeight;
     flower.style.left = `${x}px`;
     flower.style.top = `${y}px`;
 
-    // Append the video to the container
     container.appendChild(flower);
 
-    // Remove the video after it finishes playing
     flower.addEventListener('ended', () => {
       flower.remove();
     });
