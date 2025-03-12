@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <!-- Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Lottie Player -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
   <!-- Welcome Overlay -->
@@ -19,15 +21,47 @@
 
   <!-- Main Content -->
   <div class="container">
+    <!-- Photo Section -->
+    <div class="photo-section">
+      <img src="images/Tswift.jpg" alt="Maia's Photo" class="photo">
+    </div>
+
+    <!-- Spotify Playlist -->
+    <div class="spotify-section">
+      <iframe src="https://open.spotify.com/embed/playlist/6I8oCk9UJqKJhh2I3Ux3Fp?" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+
     <h1>💖💖💖</h1>
     <h1>Maia!!</h1>
     <h1>💖💖💖</h1>
     <p>Thank's for not dying!</p>
+
+    <!-- Cat Animation -->
     <div class="cat-animation">
       <div class="cat"></div>
       <div class="heart"></div>
     </div>
     <p>Enjoy these cute kitties!</p>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-section">
+      <h2>Countdown to Our Next Adventure</h2>
+      <div class="countdown-timer">
+        <span id="days">00</span>d
+        <span id="hours">00</span>h
+        <span id="minutes">00</span>m
+        <span id="seconds">00</span>s
+      </div>
+    </div>
+
+    <!-- Interactive Bouquet -->
+    <div class="bouquet-section">
+      <div class="bouquet" onclick="playFlowerAnimation()">
+        <img src="images/bouquet.png" alt="Bouquet of Flowers" class="bouquet-image">
+      </div>
+      <!-- Lottie Animation -->
+      <div id="flower-animation" class="flower-animation"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
